@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Contact Support - SalaryNest</title>
 
     <style>
@@ -15,67 +14,83 @@
             margin: 0;
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7fb;
-            color: #222;
-            line-height: 1.6;
+            background: linear-gradient(135deg, #07111f, #0b1728, #07111f);
+            color: #e5e7eb;
+            line-height: 1.7;
         }
 
         .container {
-            max-width: 850px;
+            max-width: 900px;
             margin: 40px auto;
             padding: 40px;
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            background: rgba(15, 27, 48, 0.96);
+            border: 1px solid rgba(0, 255, 180, 0.15);
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.45);
         }
 
         .header {
             text-align: center;
-            margin-bottom: 35px;
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         .header h1 {
             margin: 0;
-            font-size: 32px;
-            color: #111827;
+            font-size: 34px;
+            color: #ffffff;
         }
 
         .header p {
-            margin-top: 8px;
-            color: #6b7280;
+            margin: 8px 0 0;
+            color: #94a3b8;
             font-size: 16px;
         }
 
         .intro {
             text-align: center;
-            color: #4b5563;
+            color: #94a3b8;
             margin-bottom: 30px;
+        }
+
+        .form-card {
+            padding: 25px;
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 14px;
         }
 
         label {
             display: block;
             margin-bottom: 8px;
+            color: #cbd5e1;
             font-weight: 600;
-            color: #374151;
         }
 
         input,
-        textarea,
-        select {
+        textarea {
             width: 100%;
             padding: 14px 15px;
             margin-bottom: 20px;
-            border: 1px solid #d1d5db;
+            border: 1px solid #334155;
             border-radius: 10px;
+            background: #1e293b;
+            color: #ffffff;
             font-size: 15px;
             font-family: inherit;
             outline: none;
         }
 
+        input::placeholder,
+        textarea::placeholder {
+            color: #64748b;
+        }
+
         input:focus,
-        textarea:focus,
-        select:focus {
-            border-color: #059669;
+        textarea:focus {
+            border-color: #10d89a;
+            box-shadow: 0 0 0 2px rgba(16,216,154,0.1);
         }
 
         textarea {
@@ -88,54 +103,63 @@
             padding: 15px;
             border: none;
             border-radius: 10px;
-            background: #059669;
+            background: #08a879;
             color: #ffffff;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 700;
             cursor: pointer;
         }
 
         button:hover {
-            background: #047857;
+            background: #07956c;
         }
 
-        .direct-email {
-            margin-top: 30px;
+        .email-card {
+            margin-top: 25px;
             padding: 20px;
-            background: #f3f4f6;
-            border-radius: 12px;
             text-align: center;
+            background: rgba(16,216,154,0.06);
+            border: 1px solid rgba(16,216,154,0.12);
+            border-radius: 14px;
         }
 
-        .direct-email h3 {
-            margin-top: 0;
-            color: #111827;
+        .email-card h3 {
+            margin: 0 0 8px;
+            color: #ffffff;
+        }
+
+        .email-card p {
+            margin: 0;
+            color: #94a3b8;
         }
 
         .email {
-            color: #059669;
+            color: #10d89a;
             font-weight: 600;
-            word-break: break-word;
         }
 
         .footer {
             margin-top: 35px;
             padding-top: 20px;
-            border-top: 1px solid #e5e7eb;
+            border-top: 1px solid rgba(255,255,255,0.08);
             text-align: center;
-            color: #6b7280;
+            color: #64748b;
             font-size: 14px;
         }
 
         @media (max-width: 600px) {
             .container {
                 margin: 0;
-                padding: 25px 20px;
+                padding: 25px 18px;
                 border-radius: 0;
             }
 
             .header h1 {
-                font-size: 27px;
+                font-size: 28px;
+            }
+
+            .form-card {
+                padding: 18px;
             }
         }
     </style>
@@ -155,53 +179,51 @@
         Send a message directly to our support team.
     </p>
 
-    <form id="supportForm">
+    <div class="form-card">
 
-        <label for="name">Your Name</label>
-        <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="e.g. Aman Ali"
-            required
-        >
+        <form id="supportForm">
 
-        <label for="email">Your Email Address</label>
-        <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="e.g. worker@example.com"
-            required
-        >
+            <label for="name">Your Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="e.g. Aman Ali"
+                required
+            >
 
-        <label for="subject">Subject</label>
-        <input
-            type="text"
-            id="subject"
-            name="subject"
-            value="Support Inquiry - SalaryNest"
-            required
-        >
+            <label for="email">Your Email Address</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="e.g. worker@example.com"
+                required
+            >
 
-        <label for="message">Message / Question</label>
-        <textarea
-            id="message"
-            name="message"
-            placeholder="Explain how we can help you..."
-            required
-        ></textarea>
+            <label for="subject">Subject</label>
+            <input
+                type="text"
+                id="subject"
+                value="Support Inquiry - SalaryNest"
+                required
+            >
 
-        <button type="submit">
-            Send Message to Support
-        </button>
+            <label for="message">Message / Question</label>
+            <textarea
+                id="message"
+                placeholder="Explain how we can help you..."
+                required
+            ></textarea>
 
-    </form>
+            <button type="submit">
+                ✈ Send Message to Support
+            </button>
 
-    <div class="direct-email">
+        </form>
+
+    </div>
+
+    <div class="email-card">
         <h3>Need Direct Email Address?</h3>
-
-        <!-- Replace YOUR_SUPPORT_EMAIL with your real support email -->
         <p>
             Contact us directly at:
             <br>
@@ -216,17 +238,14 @@
 </div>
 
 <script>
-    document.getElementById("supportForm").addEventListener("submit", function(event) {
-        event.preventDefault();
+    document.getElementById("supportForm").addEventListener("submit", function(e) {
+        e.preventDefault();
 
         const name = document.getElementById("name").value;
         const email = document.getElementById("email").value;
         const subject = document.getElementById("subject").value;
         const message = document.getElementById("message").value;
 
-        /*
-         * Replace YOUR_SUPPORT_EMAIL with your real support email.
-         */
         const supportEmail = "YOUR_SUPPORT_EMAIL";
 
         const body =
