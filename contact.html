@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Support - SalaryNest</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            color: #111827;
+        }
+
+        .header p {
+            margin-top: 8px;
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        .intro {
+            text-align: center;
+            color: #4b5563;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 14px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: inherit;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #059669;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #059669;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #047857;
+        }
+
+        .direct-email {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f3f4f6;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .direct-email h3 {
+            margin-top: 0;
+            color: #111827;
+        }
+
+        .email {
+            color: #059669;
+            font-weight: 600;
+            word-break: break-word;
+        }
+
+        .footer {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px solid #e5e7eb;
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 0;
+                padding: 25px 20px;
+                border-radius: 0;
+            }
+
+            .header h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Contact Support &amp; Feedback</h1>
+        <p>SalaryNest Official Policies</p>
+    </div>
+
+    <p class="intro">
+        Have a question, feature request, or found a calculation bug?
+        Send a message directly to our support team.
+    </p>
+
+    <form id="supportForm">
+
+        <label for="name">Your Name</label>
+        <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="e.g. Aman Ali"
+            required
+        >
+
+        <label for="email">Your Email Address</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="e.g. worker@example.com"
+            required
+        >
+
+        <label for="subject">Subject</label>
+        <input
+            type="text"
+            id="subject"
+            name="subject"
+            value="Support Inquiry - SalaryNest"
+            required
+        >
+
+        <label for="message">Message / Question</label>
+        <textarea
+            id="message"
+            name="message"
+            placeholder="Explain how we can help you..."
+            required
+        ></textarea>
+
+        <button type="submit">
+            Send Message to Support
+        </button>
+
+    </form>
+
+    <div class="direct-email">
+        <h3>Need Direct Email Address?</h3>
+
+        <!-- Replace YOUR_SUPPORT_EMAIL with your real support email -->
+        <p>
+            Contact us directly at:
+            <br>
+            <span class="email">YOUR_SUPPORT_EMAIL</span>
+        </p>
+    </div>
+
+    <div class="footer">
+        © 2026 SalaryNest. All rights reserved.
+    </div>
+
+</div>
+
+<script>
+    document.getElementById("supportForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const subject = document.getElementById("subject").value;
+        const message = document.getElementById("message").value;
+
+        /*
+         * Replace YOUR_SUPPORT_EMAIL with your real support email.
+         */
+        const supportEmail = "YOUR_SUPPORT_EMAIL";
+
+        const body =
+            "Name: " + name + "\n" +
+            "Email: " + email + "\n\n" +
+            "Message:\n" + message;
+
+        window.location.href =
+            "mailto:" + supportEmail +
+            "?subject=" + encodeURIComponent(subject) +
+            "&body=" + encodeURIComponent(body);
+    });
+</script>
+
+</body>
+</html>
